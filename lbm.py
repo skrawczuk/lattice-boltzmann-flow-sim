@@ -52,6 +52,9 @@ def animation() :
     
     def update_data(i) :
         global f 
+        ax.clear()
+        plt.xticks([])
+        plt.yticks([])
         for j in range(interval) : 
             f, rho, ux, uy, u = lbm_step.step(f, height, width, omega, u0, w, sim_object)
         u[sim_object] = u.mean()   # setting object to visible color
